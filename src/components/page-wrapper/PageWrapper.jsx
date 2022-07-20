@@ -1,10 +1,10 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { Page } from './PageWrapper.styles';
 const PageWrapper = ({ children }) => {
 	return (
 		<Page>
-			<BrowserRouter>{children}</BrowserRouter>
+			<HashRouter>{children}</HashRouter>
 		</Page>
 	);
 };

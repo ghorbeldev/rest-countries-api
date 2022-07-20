@@ -10,7 +10,7 @@ import {
 	Border,
 } from './Details.styles';
 import countriesApi from '../../config/countriesApi';
-import LoadingDetails from '../loader/LoadingDetails';
+import LoadingDetails from '../loading-details/LoadingDetails';
 import { useNavigate, useParams } from 'react-router';
 import { BiArrowBack } from 'react-icons/bi';
 const Details = () => {
@@ -21,7 +21,7 @@ const Details = () => {
 		setTimeout(async () => {
 			const response = await countriesApi.getCountry(countryName);
 			setCountry(response.data[0]);
-		}, 3000);
+		}, 300000);
 	}, [countryName]);
 	console.log(country);
 	return (
