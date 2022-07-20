@@ -21,7 +21,7 @@ const Details = () => {
 		setTimeout(async () => {
 			const response = await countriesApi.getCountry(countryName);
 			setCountry(response.data[0]);
-		}, 300000);
+		}, 2500);
 	}, [countryName]);
 	console.log(country);
 	return (
