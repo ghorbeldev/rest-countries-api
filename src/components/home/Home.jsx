@@ -27,10 +27,19 @@ const Home = () => {
 								Math.ceil(response.data.length / NUM_PER_PAGE)) *
 								NUM_PER_PAGE,
 							NUM_PER_PAGE *
+								(currentPage % Math.ceil(response.data.length / NUM_PER_PAGE)) +
+								1
+						)
+					);
+					console.log(
+						response.data.slice(
+							((currentPage - 1) %
+								Math.ceil(response.data.length / NUM_PER_PAGE)) *
+								NUM_PER_PAGE,
+							NUM_PER_PAGE *
 								(currentPage % Math.ceil(response.data.length / NUM_PER_PAGE))
 						)
 					);
-					console.log(response.data);
 				} else if (region) {
 					response = await countriesApi.getRegionCountries(region);
 					setCountries(response.data);
